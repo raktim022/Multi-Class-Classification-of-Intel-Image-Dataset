@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+        background-image: linear-gradient(to right,red,white);;}
+        #t{
+            font-family: "Times New Roman", Times, serif; 
+        padding-bottom: 30px;
+    padding-top: 30px;       }
+        #out{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+        #frm{
+            height: 10px;
+            width: 30px;
+        }
+        #btn{
+        background-color: blueviolet;
+    margin: auto;
+text-align: center;       }
+     
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="container">
+    <div >
+        <center id="t"><h1> Upload image for classification</h1> </center>
+        </div>
+
+    <div>
+        <p>
+    <center><form id="frm" method="post" action="{{ url_for('predict')}}" enctype="multipart/form-data"></center></p>
+<p><input type="file" name="fl" class="form-control" autocomplete="off" required></p>
+<p> <input type="submit" value="Predict Class" id="btn" /></p>
+</form>
+</div>
+                <h1 id="out">{{pred}}</h1>
+
+</body>
+</html>
+
+
